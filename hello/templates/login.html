@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="static/myapp/login.css">
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Perform your validation logic here
+            if (username === "admin" && password === "password") {
+                alert("Login successful!");
+                // Redirect the user to a dashboard or home page
+                // window.location.href = "dashboard.html";
+            } else {
+                alert("Invalid username or password");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="logo">
+        <h1>NETFLIX</h1>
+    <div class="heading">
+        <h2 id="welcome">Welcome back!<br>Joining Netflix is easy.<h2>
+        <h3 id="easy">Enter your password and you'll be watching in no time.</h3>
+            
+    {% comment %} <h2 >Login</h2> {% endcomment %}
+    <form>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="button" onclick="validateForm()">Login</button>
+    </form>
+</body>
+</html>
